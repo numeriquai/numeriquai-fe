@@ -145,6 +145,42 @@ The `dist/` folder contains the production-ready files that can be deployed to a
 - AWS S3
 - Any web server
 
+### GitHub Pages Deployment
+
+This project includes automated CI/CD with GitHub Actions for deployment to GitHub Pages.
+
+#### Setup Steps (One-time):
+
+1. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under "Source", select **"GitHub Actions"**
+   - Save the settings
+
+2. **Verify Repository Settings**:
+   - Ensure your repository is public (or you have GitHub Pro for private repos)
+   - Make sure the main branch is named `main` (not `master`)
+
+#### Automated Deployment:
+
+- **Every push to `main` branch** will automatically trigger a build and deployment
+- **Pull requests** will trigger a build for testing (but won't deploy)
+- The site will be available at: `https://<your-username>.github.io/<repository-name>/`
+
+#### Manual Deployment:
+
+If you need to manually trigger a deployment:
+1. Go to **Actions** tab in your repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click **"Run workflow"**
+4. Select the branch and click **"Run workflow"**
+
+#### Deployment Status:
+
+- Check the **Actions** tab to monitor build and deployment progress
+- Successful deployments will show a green checkmark
+- Failed deployments will show detailed error logs
+
 ## Contributing
 
 1. Fork the repository
